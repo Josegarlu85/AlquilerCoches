@@ -1,0 +1,43 @@
+<ContentPage
+    x:Class="AlquilerCoches.Pages.CochesAlquiler"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#121212">
+
+    <VerticalStackLayout Padding="20">
+
+        <CollectionView x:Name="CochesView"
+                        SelectionMode="Single"
+                        SelectionChanged="CochesView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#1E1E1E" Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Marca}" TextColor="White" FontAttributes="Bold"/>
+                            <Label Text="{Binding Modelo}" TextColor="White"/>
+                            <Label Text="{Binding Matricula, StringFormat='Matrícula: {0}'}" TextColor="#CCCCCC"/>
+                            <Label Text="{Binding Kilometros, StringFormat='Km: {0}'}" TextColor="White"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Botones principales -->
+        <HorizontalStackLayout Spacing="10" Margin="0,20,0,0">
+            <Button Text="Añadir coche" Clicked="OnAddClicked"
+                    BackgroundColor="#333333" TextColor="White" />
+            <Button Text="Alquilar" Clicked="OnAlquilarClicked"
+                    BackgroundColor="#333333" TextColor="White" />
+        </HorizontalStackLayout>
+
+        <!-- NUEVOS BOTONES -->
+        <HorizontalStackLayout Spacing="10" Margin="0,10,0,0">
+            <Button Text="Modificar Km" Clicked="OnModificarKmClicked"
+                    BackgroundColor="#444444" TextColor="White" />
+            <Button Text="Borrar coche" Clicked="OnBorrarClicked"
+                    BackgroundColor="#992222" TextColor="White" />
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,23 @@
+<Shell
+    x:Class="AlquilerCoches.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:AlquilerCoches.Pages">
+
+    <TabBar>
+
+        <Tab Title="Inicio" Route="MainPage">
+            <ShellContent ContentTemplate="{DataTemplate pages:MainPage}" />
+        </Tab>
+
+        <Tab Title="Coches disponibles" Route="CochesAlquiler">
+            <ShellContent ContentTemplate="{DataTemplate pages:CochesAlquiler}" />
+        </Tab>
+
+        <Tab Title="Coches alquilados" Route="CochesAlquilados">
+            <ShellContent ContentTemplate="{DataTemplate pages:CochesAlquilados}" />
+        </Tab>
+
+    </TabBar>
+
+</Shell>

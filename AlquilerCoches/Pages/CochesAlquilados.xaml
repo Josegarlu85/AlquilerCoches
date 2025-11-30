@@ -1,0 +1,30 @@
+<ContentPage
+    x:Class="AlquilerCoches.Pages.CochesAlquilados"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#121212">
+
+    <VerticalStackLayout Padding="20">
+
+        <CollectionView x:Name="CochesAlquiladosView"
+                        SelectionMode="Single"
+                        SelectionChanged="CochesAlquiladosView_SelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#1E1E1E" Padding="10" Margin="5">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Marca}" TextColor="White" FontAttributes="Bold"/>
+                            <Label Text="{Binding Modelo}" TextColor="White"/>
+                            <Label Text="{Binding Matricula, StringFormat='Matrícula: {0}'}" TextColor="#CCCCCC"/>
+                            <Label Text="{Binding ClienteNombre, StringFormat='Alquilado por: {0}'}" TextColor="#CCCCCC"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Devolver coche" Clicked="OnDevolverClicked"
+                BackgroundColor="#333333" TextColor="White" Margin="0,20,0,0" />
+
+    </VerticalStackLayout>
+</ContentPage>
